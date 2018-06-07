@@ -45,7 +45,7 @@ def CheckPKG(context,name):
 def CheckVS(context):
     context.Message("Checking for Visual Studio ... ")
     result=1
-    context.env["VCDir"]="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"
+    context.env["VCDir"]='"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"'
     context.Result(result)
     return result
 
@@ -178,14 +178,14 @@ def configure(env):
                        log_file=os.path.join(env["BUILDDIR"],"configure.log"),
                        custom_tests={"CheckPKGConfig":CheckPKGConfig,"CheckPKG":CheckPKG})
     if not conf.CheckCC():
-        print "The C compiler is not working"
+        print("The C compiler is not working")
         exit(1)
     if not conf.CheckCXX():
-        print "The C++ compiler is not working"
+        print("The C++ compiler is not working")
         exit(1)
 # has_sox=conf.CheckLibWithHeader("sox","sox.h","C",call='sox_init();',autoadd=0)
 # if not has_sox:
-#     print "Error: cannot link with libsox"
+#     print("Error: cannot link with libsox")
 #     exit(1)
 # env.PrependUnique(LIBS="sox")
     env["audio_libs"]=set()
