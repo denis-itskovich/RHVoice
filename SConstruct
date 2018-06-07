@@ -44,31 +44,14 @@ def CheckPKG(context,name):
 
 def CheckVS(context):
     context.Message("Checking for Visual Studio ... ")
-    result=0
-    for version in ("14.0","12.0"):
-        try:
-            with _winreg.OpenKey(_winreg.HKEY_LOCAL_MACHINE,r"SOFTWARE\Microsoft\VisualStudio\{}\Setup\VC".format(version),_winreg.KEY_READ|_winreg.KEY_WOW64_32KEY) as key:
-                context.env["VCDir"]=_winreg.QueryValueEx(key,"ProductDir")[0]
-            result=1
-        except WindowsError:
-            pass
-        if result!=0:
-            break
+    result=1
+    context.env["VCDir"]="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"
     context.Result(result)
     return result
 
 def CheckNSIS(context,unicode_nsis=False):
     result=1
-    if unicode_nsis:
-        context.Message("Checking for Unicode NSIS... ")
-    else:
-        context.Message("Checking for NSIS... ")
-    key_name=r"SOFTWARE\NSIS"+(r"\Unicode" if unicode_nsis else "")
-    try:
-        with _winreg.OpenKey(_winreg.HKEY_LOCAL_MACHINE,key_name) as key:
-            context.env["makensis"]=File(os.path.join(_winreg.QueryValueEx(key,None)[0],"makensis.exe"))
-    except WindowsError:
-        result=0
+    context.env["makensis"]=File("C:\Program Files (x86)\NSIS\Bin\makensis.exe")
     context.Result(result)
     return result
 
@@ -208,14 +191,14 @@ def configure(env):
     env["audio_libs"]=set()
     has_giomm=False
     has_pkg_config=conf.CheckPKGConfig()
-    if has_pkg_config:
-        if conf.CheckPKG("libpulse-simple"):
-            env["audio_libs"].add("pulse")
-        if conf.CheckPKG("ao"):
-            env["audio_libs"].add("libao")
-        if conf.CheckPKG("portaudio-2.0"):
-            env["audio_libs"].add("portaudio")
-#        has_giomm=conf.CheckPKG("giomm-2.4")
+    #if has_pkg_config:
+        #if conf.CheckPKG("libpulse-simple"):
+        #    env["audio_libs"].add("pulse")
+        #if conf.CheckPKG("ao"):
+        #    env["audio_libs"].add("libao")
+        #if conf.CheckPKG("portaudio-2.0"):
+        #    env["audio_libs"].add("portaudio")
+        #has_giomm=conf.CheckPKG("giomm-2.4")
     if env["PLATFORM"]=="win32":
         env.AppendUnique(LIBS="kernel32")
     conf.Finish()

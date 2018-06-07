@@ -1,4 +1,4 @@
-# Copyright (C) 2017, 2018  Olga Yakovleva <yakovleva.o.v@gmail.com>
+﻿# Copyright (C) 2017, 2018  Olga Yakovleva <yakovleva.o.v@gmail.com>
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -32,7 +32,7 @@ define TatarLetter
 [[ж | Ж] : жэ] | 
 [[з | З] : зэт] | 
 [[й | Й] : йот] | 
-[[к | К] : ка] | 
+[[к | К | қ | Қ] : ка] | 
 [[л | Л] : эль] | 
 [[м | М] : эм] | 
 [[н | Н] : эн] | 
