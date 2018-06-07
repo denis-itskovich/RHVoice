@@ -45,7 +45,7 @@ def CheckPKG(context,name):
 def CheckVS(context):
     context.Message("Checking for Visual Studio ... ")
     result=1
-    context.env["VCDir"]='"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"'
+    context.env["VCDir"]="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"
     context.Result(result)
     return result
 
