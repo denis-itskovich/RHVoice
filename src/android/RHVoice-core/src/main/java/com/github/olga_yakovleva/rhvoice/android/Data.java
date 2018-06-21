@@ -64,6 +64,8 @@ public final class Data
         addLanguage(lang);
         lang=new LanguagePack("Tatar", "tat", "RUS", 1, 8, null, null);
         lang.addVoice(new VoicePack("Talgat", lang, 4, 0, "http://rsbsrt.ru/Talgat/RHVoice-voice-Tatar-Talgat-v4.0.zip", null));
+        lang=new LanguagePack("Kazah", "Kaz", "RUS", 1, 8, null, null);
+        lang.addVoice(new VoicePack("Kazah", lang, 4, 0, null, null));
         addLanguage(lang);
         lang=new LanguagePack("Ukrainian", "ukr", "UKR", 1, 3, null, null);
         lang.addVoice(new VoicePack("Anatol", lang, 4, 1, null, null));
