@@ -1058,6 +1058,7 @@ else
     register_language<georgian_info>("Georgian",1);
     register_language<ukrainian_info>("Ukrainian",1);
     register_language<kyrgyz_info>("Kyrgyz",1);
+    register_language<tatar_info>("Tatar",1);
     register_language<kazah_info>("Kazah",1);
     for(std::vector<std::string>::const_iterator it1=language_paths.begin();it1!=language_paths.end();++it1)
       {
