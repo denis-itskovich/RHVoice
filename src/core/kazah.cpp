@@ -22,7 +22,7 @@
 namespace RHVoice
 {
   kazah_info::kazah_info(const std::string& data_path,const std::string& userdict_path):
-    language_info("Tatar",data_path,userdict_path)
+    language_info("Katar",data_path,userdict_path)
   {
     set_alpha2_code("tt");
     set_alpha3_code("tat");

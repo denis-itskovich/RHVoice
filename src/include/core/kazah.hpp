@@ -13,8 +13,8 @@
 /* You should have received a copy of the GNU Lesser General Public License */
 /* along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-#ifndef RHVOICE_TATAR_HPP
-#define RHVOICE_TATAR_HPP
+#ifndef RHVOICE_KAZAH_HPP
+#define RHVOICE_KAZAH_HPP
 
 #include "str.hpp"
 #include "fst.hpp"
